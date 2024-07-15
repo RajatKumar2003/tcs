@@ -15,7 +15,7 @@
 // reference the Dompdf namespace
 use Dompdf\Dompdf;
 
-class Pdf
+class Pdf 
 {
     public function __construct(){
         

@@ -37,6 +37,13 @@ public function findCustomer($id)
     return $query->row();
 }
 
+public function findCustomerByName($name)
+{
+    $query = $this->db->get_where('customer_tbl', array('Name' => $name));
+    return $query->row();
+}
+
+
 public function updateCustomer($Id, $data)
     {
         $this->db->where('CustId', $Id);
@@ -55,10 +62,10 @@ public function findGallery($blogId)
     return $query->row();
 }
 
-public function deleteMonth($id)
+public function deleteCustomer($id)
 {
-    $this->db->where('MonthId',$id);
-   return $this->db->delete('month_tbl');
+    $this->db->where('CustId',$id);
+   return $this->db->delete('customer_tbl');
     // return $this->db->affected_rows() > 0;
 }
 

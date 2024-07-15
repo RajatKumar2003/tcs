@@ -7,7 +7,7 @@
     <style>
         .btn-background,
         .btn-background:hover {
-            background-color: #038F7A;
+            background-color: #cf2c31;
             color: #FFFFFF;
         }
 

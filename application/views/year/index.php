@@ -97,9 +97,9 @@
 
                                 <form id="<?php echo ($editYear)? "updateyear":"addyear" ?>" action="<?php echo base_url() . 'UserRoles/add'; ?>" method="post">
                                     <div class="form-group">
-                                        <label for="">Title</label>
+                                        <label for="">Title <span class="text-danger">*</span></label>
                                         <input type="hidden" name="Id" value="<?php echo ($editYear) ? $editYear->YearId : ''; ?>">
-                                        <input type="text" class="form-control" name="title" value="<?php echo ($editYear) ? $editYear->Title : ''; ?>">
+                                        <input type="text" required class="form-control" name="title" value="<?php echo ($editYear) ? $editYear->Title : ''; ?>">
                                     </div>
 
                                     

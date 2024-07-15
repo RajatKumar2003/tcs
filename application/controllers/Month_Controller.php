@@ -41,7 +41,7 @@ class Month_Controller extends CI_Controller
     {
         $this->data['pagename'] = "Months";
         $this->data['editMonth'] = "";
-        $this->data['monthlist'] = $this->Month_Model->getAllMonth();
+        $this->data['monthlist'] = $this->Month_Model->getAllMonth('1||0');
         // $this->data['totalqr'] = $this->db->count_all('qr_tbl');
         $this->load->view('month/index', $this->data);
     }
@@ -75,7 +75,7 @@ class Month_Controller extends CI_Controller
         }
 
         $this->data['pagename'] = "Edit Month";
-        $this->data['monthlist'] = $this->Month_Model->getAllMonth();
+        $this->data['monthlist'] = $this->Month_Model->getAllMonth('1||0');
         // $this->data['totalqr'] = $this->db->count_all('qr_tbl');
         $this->load->view('month/index', $this->data);
     }

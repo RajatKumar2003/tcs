@@ -41,7 +41,7 @@ class Year_Controller extends CI_Controller
     {
         $this->data['pagename'] = "Years";
         $this->data['editYear'] = "";
-        $this->data['yearlist'] = $this->Year_Model->getAllYear();
+        $this->data['yearlist'] = $this->Year_Model->getAllYear('1||0');
         // $this->data['totalqr'] = $this->db->count_all('qr_tbl');
         $this->load->view('year/index', $this->data);
     }
@@ -75,7 +75,7 @@ class Year_Controller extends CI_Controller
         }
 
         $this->data['pagename'] = "Edit Year";
-        $this->data['yearlist'] = $this->Year_Model->getAllYear();
+        $this->data['yearlist'] = $this->Year_Model->getAllYear('1||0');
         // $this->data['totalqr'] = $this->db->count_all('qr_tbl');
         $this->load->view('year/index', $this->data);
     }

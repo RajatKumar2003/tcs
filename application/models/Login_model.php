@@ -15,7 +15,7 @@ public function validate_user(){
 //   );
 //  return $this->db->insert('user_tbl',$data);
   
-  $user = $this->db->get_where('user_tbl', ['Email' => $email])->row_array();
+  $user = $this->db->get_where('user_tbl', ['Email' => $email,'UserStatus'=>'1'])->row_array();
   
   
 

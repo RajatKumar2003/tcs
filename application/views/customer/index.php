@@ -48,17 +48,17 @@
                                             <div class="row">
                                             <div class="col-lg-4">
                                                <div class="form-group">
-                                               <label for=""> Name</label>
+                                               <label for=""> Name <span class="text-danger">*</span></label>
                                                <input type="hidden" name="Id" value="<?php echo ($editCustomer) ? $editCustomer->CustId : ''; ?>">
-                                               <input type="text" name="name" value="<?php echo ($editCustomer) ? $editCustomer->Name : ''; ?>" class="form-control">
+                                               <input type="text" required name="name" value="<?php echo ($editCustomer) ? $editCustomer->Name : ''; ?>" class="form-control">
                                                </div>
                                             </div>
 
                                             <div class="col-lg-4">
                                           
                                               <div class="form-group">
-                                              <label for="">Contact Person </label>
-                                              <input type="text" name="contactperson" value="<?php echo ($editCustomer) ? $editCustomer->ContactPerson : ''; ?>" class="form-control">
+                                              <label for="">Contact Person  <span class="text-danger">*</span></label>
+                                              <input type="text" required name="contactperson" value="<?php echo ($editCustomer) ? $editCustomer->ContactPerson : ''; ?>" class="form-control">
                                               </div>
                                             </div>
 
@@ -79,22 +79,22 @@
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
-                                                        <label for="">GST NO</label>
-                                                        <input type="text" class="form-control" name="gstno" value="<?php echo ($editCustomer) ? $editCustomer->GstNo : ''; ?>">
+                                                        <label for="">GST NO  <span class="text-danger">*</span></label>
+                                                        <input type="text" required class="form-control" name="gstno" value="<?php echo ($editCustomer) ? $editCustomer->GstNo : ''; ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
-                                                        <label for="">CIN NO</label>
-                                                        <input type="text" class="form-control" name="cinno" value="<?php echo ($editCustomer) ? $editCustomer->CinNo : ''; ?>">
+                                                        <label for="">CIN NO  <span class="text-danger">*</span></label>
+                                                        <input type="text" required class="form-control" name="cinno" value="<?php echo ($editCustomer) ? $editCustomer->CinNo : ''; ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-4">
                                                   <div class="form-group">
-                                                    <label for="">PAN NO</label>
-                                                    <input type="text" class="form-control" name="panno" value="<?php echo ($editCustomer) ? $editCustomer->PanNo : ''; ?>">
+                                                    <label for="">PAN NO  <span class="text-danger">*</span></label>
+                                                    <input type="text" required class="form-control" name="panno" value="<?php echo ($editCustomer) ? $editCustomer->PanNo : ''; ?>">
                                                   </div>
                                                 </div>
                                             </div>
@@ -121,8 +121,8 @@
                                             <div class="row ">
                                                 <div class="col-lg-12">
                                                    <div class="form-group">
-                                                   <label for="">Address</label>
-                                                   <textarea name="address" class="form-control" id=""><?php echo ($editCustomer) ? $editCustomer->Address : ''; ?></textarea>
+                                                   <label for="">Address  <span class="text-danger">*</span></label>
+                                                   <textarea name="address" required class="form-control" id=""><?php echo ($editCustomer) ? $editCustomer->Address : ''; ?></textarea>
                                                    </div>
                                                 </div>
                                             </div>
@@ -192,7 +192,7 @@
 
                                                             <button class="btn btn-danger btn-circle" type="button" onclick="showConfirmation('<?php echo $list->CustId ?>')"><i class="fa fa-trash"></i>
                                                             </button>
-                                                            <a href="" target="_blank" class="btn btn-warning btn-circle"><i class="fa fa-file-photo-o "></i></a>
+                                                            <!-- <a href="" target="_blank" class="btn btn-warning btn-circle"><i class="fa fa-file-photo-o "></i></a> -->
 
                                                         </td>
                                                     </tr>
@@ -347,21 +347,21 @@ function performAjaxFunction(global_var) {
 
 
             $.ajax({
-                url: '<?php echo base_url() . 'Testimonial/deletetestimonial'; ?>',
+                url: '<?php echo base_url() . 'Customer/deletecustomer'; ?>',
                 method: 'POST',
                 data: {
                     id: global_var
                 },
                 success: function(data) {
                     // Handle the success response
-                    var $toast = toastr['success']('Testimonial successfully deleted');
+                    var $toast = toastr['success']('Customer successfully deleted');
                     setTimeout(function() {
                         location.reload();
                     }, 2000)
                 },
                 error: function(error) {
                     // Handle the error response
-                    var $toast = toastr['error']('Testimonial not  deleted');
+                    var $toast = toastr['error']('Customer not  deleted');
 
                     setTimeout(function() {
                         location.reload();

@@ -6,8 +6,17 @@ class Year_Model extends CI_model{
 
 
 
-public function getAllYear()
+public function getAllYear($id)
 {
+    if (strpos($id, '||') !== false) {
+        // Multiple values scenario
+        $statuses = explode('||', $id);
+    } else {
+        // Single value scenario
+        $statuses = array($id);
+    }
+
+    $this->db->where_in('Status', $statuses);
 
     // $this->db->where(array('IsDeleted'=>'0'));
     return $this->db->get('year_tbl')->result();

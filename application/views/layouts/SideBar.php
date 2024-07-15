@@ -26,17 +26,28 @@
                 </li> -->
 
             <li class="active">
-                <a href="<?php echo site_url('Inquiry') ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Invoices</span> </span></a>
+                <a href="<?php echo site_url('Invoice') ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Invoices</span> </span></a>
 
 
             </li>
 
-          
+         <?php
+         if($this->session->userdata('userType')!='admin'){
+         ?> 
+            <li>
+                        <a href="<?php echo site_url('User/profile') ?>"> <span class="nav-label"><i class="fa fa-th-large"></i> Profile</span> </span></a>
+                    </li>
+
+                    <?php } ?>
             <!-- <li><span class="nav-label" style="margin-left: auto;">Masters</span> </span></li> -->
 
 
 
           
+            <?php
+            if($this->session->userdata('userType')=='admin')
+            {
+             ?>
 
             <li>
                 <a href="<?php echo site_url('Customer') ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Customers</span> </span></a>
@@ -45,19 +56,12 @@
             </li>
 
             <li>
-                <a href="<?php echo site_url('Qrcode') ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Users</span> </span></a>
+                <a href="<?php echo site_url('User') ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Users</span> </span></a>
 
 
             </li>
 
             
-
-            <!-- <li>
-                <a href="<?php echo site_url('Testimonial') ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Testimonial</span> </span></a>
-
-
-            </li> -->
-
             <li>
                 <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Master</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
@@ -74,11 +78,15 @@
                     </li>
 
                     <li>
+                        <a href="<?php echo site_url('Role') ?>"><span class="nav-label">Role</span></a>
+                    </li>
+
+                    <li>
                         <a href="<?php echo site_url('Seo') ?>"> <span class="nav-label">Description</span><span class="fa arrow"></span></a>
 
                         <ul class="nav nav-second-level collapse">
                     <li>
-                        <a href="<?php echo site_url('Description/category') ?>"> <span class="nav-label">Category</span> </span></a>
+                        <!-- <a href="<?php echo site_url('Description/category') ?>"> <span class="nav-label">Category</span> </span></a> -->
                         <a href="<?php echo site_url('Description') ?>"> <span class="nav-label">Description</span> </span></a>
                     </li>
                  
@@ -93,6 +101,7 @@
 
                 </ul>
             </li>
+           
 
 
             <li>
@@ -101,13 +110,17 @@
                     <li>
                         <a href="<?php echo site_url('Seo') ?>"> <span class="nav-label">Company Profile</span> </span></a>
                     </li>
-                 
+
+
+                 <li>
+                        <a href="<?php echo site_url('User/profile') ?>"> <span class="nav-label"> Profile</span> </span></a>
+                    </li>
                    
 
                 </ul>
             </li>
 
-
+            <?php } ?>
 
 
 

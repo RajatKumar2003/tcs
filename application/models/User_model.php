@@ -2,6 +2,56 @@
 class User_model extends CI_model {
 //============================User============================//
 
+
+
+public function getAllUser($id)
+{
+    if (strpos($id, '||') !== false) {
+        // Multiple values scenario
+        $statuses = explode('||', $id);
+    } else {
+        // Single value scenario
+        $statuses = array($id);
+    }
+
+    $this->db->where_in('UserStatus', $statuses);
+    $this->db->where('UserType !=', 'admin');
+    // $this->db->where(array('IsDeleted'=>'0'));
+    return $this->db->get('user_tbl')->result();
+}
+
+public function saveUser($data)
+{
+    $this->db->insert('user_tbl', $data);
+
+    // Check if the insertion was successful
+    return $this->db->affected_rows() > 0;
+}
+
+public function findUser($id)
+{
+    $query = $this->db->get_where('user_tbl', array('UserId' => $id));
+    return $query->row();
+}
+
+public function updateUser($Id, $data)
+    {
+        $this->db->where('UserId', $Id);
+        $this->db->update('user_tbl', $data);
+        return $this->db->affected_rows();
+    }
+
+
+
+
+public function deleteUser($id)
+{
+    $this->db->where('UserId',$id);
+   return $this->db->delete('user_tbl');
+    // return $this->db->affected_rows() > 0;
+}
+
+
 public function get_all_user_data($id)
 {
 

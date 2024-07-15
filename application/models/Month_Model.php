@@ -6,9 +6,18 @@ class Month_Model extends CI_model{
 
 
 
-public function getAllMonth()
+public function getAllMonth($id)
 {
 
+    if (strpos($id, '||') !== false) {
+        // Multiple values scenario
+        $statuses = explode('||', $id);
+    } else {
+        // Single value scenario
+        $statuses = array($id);
+    }
+
+    $this->db->where_in('Status', $statuses);
     // $this->db->where(array('IsDeleted'=>'0'));
     return $this->db->get('month_tbl')->result();
 }

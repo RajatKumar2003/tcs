@@ -99,14 +99,14 @@
 
                                 <form id="<?php echo ($editState)? "updatestate":"addstate" ?>" action="<?php echo base_url() . 'UserRoles/add'; ?>" method="post">
                                     <div class="form-group">
-                                        <label for="">Title</label>
+                                        <label for="">Title <span class="text-danger">*</span></label>
                                         <input type="hidden" name="Id" value="<?php echo ($editState) ? $editState->StateId : ''; ?>">
-                                        <input type="text" class="form-control" name="title" value="<?php echo ($editState) ? $editState->Title : ''; ?>">
+                                        <input type="text" class="form-control" name="title" value="<?php echo ($editState) ? $editState->Title : ''; ?>" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="">Code</label>
-                                        <input type="number" class="form-control" name="code" <?php echo ($editState) ?  'disabled' : '' ?> value="<?php echo ($editState) ?  $editState->Code : '' ?>">
+                                        <label for="">Code <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="code" <?php echo ($editState) ?  'disabled' : '' ?> required value="<?php echo ($editState) ?  $editState->Code : '' ?>">
                                     </div>
 
                                     

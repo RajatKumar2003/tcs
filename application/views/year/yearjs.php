@@ -7,7 +7,7 @@
             // Initialize Ladda
             var l = $('.ladda-button-demo').ladda();
             // Validate the form
-            if ($(this).valid()) {
+            if (this.checkValidity()) {
                 var formData = new FormData($(this)[0]);
                 console.log(formData);
 

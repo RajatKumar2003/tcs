@@ -69,6 +69,21 @@ $route['State/savestate'] = 'State_Controller/savestate';
 $route['State/editstate/(:num)'] = 'State_Controller/editstate/$1';
 $route['State/updatestate'] = 'State_Controller/updatestate';
 $route['State/deletestate'] = 'State_Controller/deletestate';
+$route['State/checkstatecode'] = 'State_Controller/checkstatecode';
+
+$route['Role'] = 'Role_Controller';
+$route['Role/saverole'] = 'Role_Controller/saverole';
+$route['Role/editrole/(:num)'] = 'Role_Controller/editrole/$1';
+$route['Role/updaterole'] = 'Role_Controller/updaterole';
+$route['Role/deleterole'] = 'Role_Controller/deleterole';
+
+
+$route['User'] = 'User_Controller';
+$route['User/saveuser'] = 'User_Controller/saveuser';
+$route['User/edituser/(:num)'] = 'User_Controller/edituser/$1';
+$route['User/updateuser'] = 'User_Controller/updateuser';
+$route['User/deleteuser'] = 'User_Controller/deleteuser';
+$route['User/profile'] = 'User_Controller/profile';
 
 
 $route['Description/category'] = 'Description_Controller/category';
@@ -89,6 +104,15 @@ $route['Customer'] = 'Customer_Controller';
 $route['Customer/savecustomer'] = 'Customer_Controller/savecustomer';
 $route['Customer/editcustomer/(:num)'] = 'Customer_Controller/editcustomer/$1';
 $route['Customer/updatecustomer'] = 'Customer_Controller/updatecustomer';
+$route['Customer/deletecustomer'] = 'Customer_Controller/deletecustomer';
+
+
+$route['Invoice'] = 'Invoice_Controller';
+$route['Invoice/saveinvoice'] = 'Invoice_Controller/saveinvoice';
+$route['Invoice/editinvoice/(:num)'] = 'Invoice_Controller/editinvoice/$1';
+$route['Invoice/updateinvoice'] = 'Invoice_Controller/updateinvoice';
+$route['Invoice/deleteinvoice'] = 'Invoice_Controller/deleteinvoice';
+$route['Invoice/printinvoice/(:num)'] = 'Invoice_Controller/printinvoice/$1';
 
 $route['Qrcode'] = 'Qrcode_Controller';
 $route['Qrcode/savegallery'] = 'Qrcode_Controller/savegallery';

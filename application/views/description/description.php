@@ -43,7 +43,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
-                                                <th>Category</th>
+                                                <!-- <th>Category</th> -->
                                                 <th>Title</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
@@ -59,7 +59,7 @@
 
                                                     <tr>
                                                         <td><?php echo $i++; ?></td>
-                                                        <td><?php echo $list->Category; ?></td>
+                                                        <!-- <td><?php echo $list->Category; ?></td> -->
                                                         <td><?php echo $list->Title; ?></td>
                                                         <td><?php echo $list->Status == '1' ? "Active" : "Inactive"; ?></td>
                                                         <td>
@@ -99,7 +99,7 @@
 
                                 <form id="<?php echo ($editDescription)? "updatedescription":"adddescription" ?>" action="<?php echo base_url() . 'UserRoles/add'; ?>" method="post">
                                 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="">Category</label>
                                     <select name="category" id="" class="form-control">
                                         <?php
@@ -114,13 +114,13 @@
                                         }
                                         ?>
                                     </select>
-                                </div>
+                                </div> -->
                                 
                                 
                                 <div class="form-group">
-                                        <label for="">Title</label>
+                                        <label for="">Title <span class="text-danger">*</span></label>
                                         <input type="hidden" name="Id" value="<?php echo ($editDescription) ? $editDescription->DescId : ''; ?>">
-                                        <input type="text" class="form-control" name="title" value="<?php echo ($editDescription) ? $editDescription->Title : ''; ?>">
+                                        <input type="text" required class="form-control" name="title" value="<?php echo ($editDescription) ? $editDescription->Title : ''; ?>">
                                     </div>
 
                                     

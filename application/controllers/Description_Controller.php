@@ -145,7 +145,7 @@ class Description_Controller extends CI_Controller
 
         $descData = array(
 
-            'Category' => $this->input->post('category'),
+            // 'Category' => $this->input->post('category'),
             'Title' => $this->input->post('title'),
             'Status' => $this->input->post('status'),
 

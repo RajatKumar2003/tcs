@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'd08b45139d883cb8462e56e8ec405f53490bf1e3',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'd08b45139d883cb8462e56e8ec405f53490bf1e3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'pear/math_biginteger' => array(
+            'pretty_version' => 'v1.0.3',
+            'version' => '1.0.3.0',
+            'reference' => '33d4357543037a458fad3e8c837a01b93104e592',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pear/math_biginteger',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'pear/numbers_words' => array(
+            'pretty_version' => 'v0.18.2',
+            'version' => '0.18.2.0',
+            'reference' => 'e4d1d8e20def443b69fbf3028d1029950d101c9d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pear/numbers_words',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

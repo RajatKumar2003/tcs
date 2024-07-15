@@ -5,9 +5,9 @@ class Login extends CI_Controller {
 
 //============================Login===========================//
 public function index(){ 
-  $data['pagename'] = "Login";
+  $this->data['pagename'] = "Login";
   $this->load->model('Seo_Model');
-  $data['editseo'] =  $this->Seo_Model->findSeo('1');
+  $this->data['editseo'] =  $this->Seo_Model->findSeo('1');
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -19,6 +19,7 @@ public function index(){
         $usrdata=array( 
           'user_id'   => $data['UserId'], 
           'userName' =>$data['Username'],
+          'userType'=>$data['UserType'],
          
         );
         $this->session->set_userdata($usrdata);
@@ -28,14 +29,14 @@ public function index(){
 
       elseif($data==0)
       {
-       $this->load->view('login', $data); 
+       $this->load->view('login', $this->data); 
         $this->session->set_flashdata('status','<div class="alert alert-danger" id="alert"> <strong><i class="fa fa-warning"></i> &nbsp; Some Problem Occurred !</strong> Please Try Again. </div>');
       }
   }
 
   else {
   
-    $this->load->view('login', $data); 
+    $this->load->view('login', $this->data); 
   }
 }
 

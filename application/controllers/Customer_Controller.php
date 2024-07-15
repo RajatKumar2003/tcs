@@ -112,11 +112,11 @@ class Customer_Controller extends CI_Controller
         echo json_encode($response);
     }
 
-    public function deletemonth()
+    public function deletecustomer()
     {
         $Id = $_POST['id'];
         if ($Id != "") {
-            $result = $this->Month_Model->deleteMonth($Id);
+            $result = $this->Customer_Model->deleteCustomer($Id);
             if ($result) {
                 $response = array("res" => true, 'message' => 'Role deleted successfully.');
             } else {

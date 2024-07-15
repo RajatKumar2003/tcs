@@ -41,7 +41,7 @@ class State_Controller extends CI_Controller
     {
         $this->data['pagename'] = "States";
         $this->data['editState'] = "";
-        $this->data['statelist'] = $this->State_Model->getAllState();
+        $this->data['statelist'] = $this->State_Model->getAllState('1||0');
         // $this->data['totalqr'] = $this->db->count_all('qr_tbl');
         $this->load->view('state/index', $this->data);
     }
@@ -90,7 +90,7 @@ class State_Controller extends CI_Controller
         }
 
         $this->data['pagename'] = "Edit State";
-        $this->data['statelist'] = $this->State_Model->getAllState();
+        $this->data['statelist'] = $this->State_Model->getAllState('1||0');
         // $this->data['totalqr'] = $this->db->count_all('qr_tbl');
         $this->load->view('state/index', $this->data);
     }
@@ -128,6 +128,18 @@ class State_Controller extends CI_Controller
         }
 
         echo json_encode($response);
+    }
+
+    public function checkstatecode()
+    {
+       $result = $this->State_Model->stateCheck();
+       if ($result) {
+        $response = array("res" => true, 'message' => 'Role deleted successfully.');
+    } else {
+        $response = array('res' => false, 'message' => 'Unable to delete blog.');
+    }
+
+    echo json_encode($response);
     }
 
 

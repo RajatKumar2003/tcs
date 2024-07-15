@@ -6,9 +6,18 @@ class State_Model extends CI_model{
 
 
 
-public function getAllState()
+public function getAllState($id)
 {
 
+    if (strpos($id, '||') !== false) {
+        // Multiple values scenario
+        $statuses = explode('||', $id);
+    } else {
+        // Single value scenario
+        $statuses = array($id);
+    }
+
+    $this->db->where_in('Status', $statuses);
     // $this->db->where(array('IsDeleted'=>'0'));
     return $this->db->get('state_tbl')->result();
 }
@@ -24,6 +33,19 @@ public function saveState($data)
 public function findState($id)
 {
     $query = $this->db->get_where('state_tbl', array('StateId' => $id));
+    return $query->row();
+}
+
+public function stateCheck()
+{
+    $code = $this->input->post('code');
+    $query = $this->db->get_where('state_tbl', array('Code' => $code));
+    return $query->row();
+}
+
+public function findStateByName($name)
+{
+    $query = $this->db->get_where('state_tbl',array('Title'=> $name));
     return $query->row();
 }
 

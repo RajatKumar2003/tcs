@@ -97,9 +97,9 @@
 
                                 <form id="<?php echo ($editMonth)? "updatemonth":"addmonth" ?>" action="<?php echo base_url() . 'UserRoles/add'; ?>" method="post">
                                     <div class="form-group">
-                                        <label for="">Title</label>
+                                        <label for="">Title <span class="text-danger">*</span></label>
                                         <input type="hidden" name="Id" value="<?php echo ($editMonth) ? $editMonth->MonthId : ''; ?>">
-                                        <input type="text" class="form-control" name="title" value="<?php echo ($editMonth) ? $editMonth->Title : ''; ?>">
+                                        <input type="text" class="form-control" name="title" required value="<?php echo ($editMonth) ? $editMonth->Title : ''; ?>">
                                     </div>
 
                                     
